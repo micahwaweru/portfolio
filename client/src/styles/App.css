@@ -1,0 +1,64 @@
+
+.hero-image{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/_1030325.JPG'); 
+    height: 30em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position:relative;
+}
+
+.cardCont{
+  position: relative;
+  /* border-style: solid; */
+ 
+  padding-top: 5%;
+  margin-top: 2%;
+  
+}
+
+.projCard{
+  position: absolute;
+  width: 18rem;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+.resumeCard{
+  position: absolute;
+  width: 100%;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+
+  .contactCont{
+    border-style: solid;
+    border-color: gray;
+    border-left: none;
+    border-right: none;
+    border-width: 1px;
+    height: 15em;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+  }
+
+  #contactBlock{
+    padding-top: 5%;
+    
+    
+    
+  }
+
+  #liIcon{
+    height: 5em;
+    align-self: center;
+  }
+
