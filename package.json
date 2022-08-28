@@ -2,13 +2,16 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/server.js",
   "engines": {
     "node": ">=13.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/server.js"
+    "start": "node server/server.js",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build"
   },
   "repository": {
     "type": "git",
@@ -23,6 +26,11 @@
   "homepage": "https://github.com/micahwaweru/portfolio#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "react-bootstrap": "^2.0.2",
+    "react-icons": "^4.3.1",
+    "react-router": "^6.0.1",
+    "react-router-dom": "^6.0.1",
+    "react-scroll": "^1.8.4"
   }
 }
