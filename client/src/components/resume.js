@@ -7,7 +7,7 @@ export default function Resume(cardAr) {
 
   const[posts, setPosts]=useState([]);
   useEffect(()=>{
-    fetch('http://localhost:4001/resumeItem')
+    fetch('/resumeItem')
     .then((response)=>response.json())
     .then((data)=>{
       setPosts(data)

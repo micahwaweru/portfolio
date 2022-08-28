@@ -11,27 +11,27 @@ export default function CardCont(cardAr) {
 
   const [posts, setPosts] = useState([]);
 
-  useEffect(()=>{
-    let mounted = true;
-    getProjects()
-    .then(items=>{
-      if(mounted){
-        setPosts(items); 
-      }
-    })
-  })
   // useEffect(()=>{
-  //   fetch('../server/getProjects')
-  //   .then((response)=>response.json())
-  //   .then((data)=>{
-      
-  //     console.log(data[0].projectName);
-  //     setPosts(data)
+  //   let mounted = true;
+  //   getProjects()
+  //   .then(items=>{
+  //     if(mounted){
+  //       setPosts(items); 
+  //     }
   //   })
-  //   .catch((err)=>{
-  //     console.log(err);
-  //   });
-  // },[])
+  // })
+  useEffect(()=>{
+    fetch('/getProjects')
+    .then((response)=>response.json())
+    .then((data)=>{
+      
+      console.log(data[0].projectName);
+      setPosts(data)
+    })
+    .catch((err)=>{
+      console.log(err);
+    });
+  },[])
 
   cardAr = [];
   for(var i=0;i<posts.length;i++){

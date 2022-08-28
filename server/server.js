@@ -20,7 +20,7 @@ app.get('/',(req,res)=>{
 
 app.get('/getProjects',(req,res)=>{
     console.log('getProjects Route')
-    fs.readFile('db.json',(err,data)=>{
+    fs.readFile('./server/db.json',(err,data)=>{
         if(err)throw err;
         dbData=JSON.parse(data);
 
@@ -29,7 +29,7 @@ app.get('/getProjects',(req,res)=>{
 })
 
 app.post('/addProject',(req,res)=>{
-    fs.readFile('db.json',(err,data)=>{
+    fs.readFile('./server/db.json',(err,data)=>{
         if(err)throw err;
         dbData=JSON.parse(data);
         dbData.push(req.body)
@@ -40,7 +40,7 @@ app.post('/addProject',(req,res)=>{
                 return dbData;
             });
             stringData=JSON.stringify(dbData);
-            fs.writeFile('db.json',stringData,(err,data)=>{
+            fs.writeFile('./server/db.json',stringData,(err,data)=>{
                 if(err)throw err;
             });
     });
@@ -49,7 +49,7 @@ app.post('/addProject',(req,res)=>{
 
 app.get('/resumeItem',(req,res)=>{
     console.log('Resume Item Route Triggered')
-    fs.readFile('cv.json',(err,data)=>{
+    fs.readFile('./server/cv.json',(err,data)=>{
         if(err)throw err;
         dbData=JSON.parse(data);
 
@@ -58,7 +58,7 @@ app.get('/resumeItem',(req,res)=>{
 })
 
 app.post('/newJob',(req,res)=>{
-    fs.readFile('cv.json',(err,data)=>{
+    fs.readFile('./server/cv.json',(err,data)=>{
         if(err)throw err;
         dbData=JSON.parse(data);
         dbData.push(req.body)
@@ -69,7 +69,7 @@ app.post('/newJob',(req,res)=>{
                 return dbData;
             });
             stringData=JSON.stringify(dbData);
-            fs.writeFile('cv.json',stringData,(err,data)=>{
+            fs.writeFile('./server/cv.json',stringData,(err,data)=>{
                 if(err)throw err;
             });
     });
